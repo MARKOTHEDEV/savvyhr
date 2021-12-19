@@ -1,0 +1,608 @@
+{% extends './base.html' %}
+{% load static %}
+
+
+
+
+
+      {% include 'partials/nav.html' %}
+
+      
+      {% block mainContent %}
+<style>
+  .marko-grid-wrapper{
+    width: 100%;
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 0 2%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 80px repeat(8, minmax(10px, 150px));
+    grid-gap: 3px;
+  }
+  
+  
+  .word-1 {
+    color: #fff;
+    background-color: #000;
+    font-weight: 700;
+  }
+  
+  .word-2 {
+    color: #de1b1b;
+    background-color: #f6f6f6;
+    text-transform: lowercase;
+  
+  }
+  
+  .word-3 {
+    color: #7d1935;
+    font-weight: 700;
+    background-color: #4a96ad;
+  }
+  
+  [class^=item0] {
+    overflow: hidden;
+    border-radius: 3px;
+    position: relative;
+  }
+  
+  [class^=item0]::before {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  
+  .meta .cta-list,  [class^=item0], [class^=item0]::before {
+    display: flex;
+    vertical-align: middle;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .meta {
+    /* transform: translateY(100%); */
+    opacity: 1;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    padding-bottom: 5px;
+    bottom: 0;
+    color: #fff;
+    background: linear-gradient(to top, rgba(22, 22, 22, 0.65) 30%, rgba(22, 22, 22, 0.64) 31%, rgba(0, 0, 0, 0.29) 69%, rgba(0, 0, 0, 0) 100%);
+    transition: 1s;
+  }
+  
+  [class^=item]:hover .meta {
+    transform: unset;
+    opacity: 1;
+  }
+  
+  .meta .cta-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .meta .cta-list .cta-item {
+    flex: 1;
+    transition: 0.2s;
+  }
+  
+  .meta .cta-list .cta-item:hover {
+    transform: scale(1.2) rotate(-15deg);
+    cursor: pointer;
+  }
+  
+  .quote {
+    font-size: 2em;
+    color: #efefef;
+    font-style: italic;
+    transition: 0.3s;
+  }
+  
+  .quote::after {
+    content: "~ " attr(cite);
+    font-size: 0.5em;
+    display: block;
+    padding-top: 5px;
+  }
+  
+  .item01 {
+    grid-column: 1/3;
+    grid-row: 1/4;
+  }
+  .item02{
+    grid-column: 3/5;
+    grid-row:1/3;
+  }
+
+  .item03{
+    grid-column:  3/5;
+    grid-row:3;
+
+  }
+  
+  @media (max-width: 960px) {
+    
+  
+    .marko-grid-wrapper {
+      padding: 0;
+      grid-template-columns: repeat(2, 1fr);
+    }
+  
+    [class^=item] {
+      grid-column: unset;
+      grid-row: unset;
+    }
+  }
+  @media (max-width: 476px) {
+ 
+  
+    .marko-grid-wrapper {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+  @-webkit-keyframes spin {
+    from {
+      transform: translate(-50%, -50%) rotate(0deg);
+    }
+    to {
+      transform: translate(-50%, -50%) rotate(1440deg);
+      opacity: 0;
+      content: unset;
+    }
+  }
+  @keyframes spin {
+    from {
+      transform: translate(-50%, -50%) rotate(0deg);
+    }
+    to {
+      transform: translate(-50%, -50%) rotate(1440deg);
+      opacity: 0;
+      content: unset;
+    }
+  }
+  @-webkit-keyframes blink {
+    to {
+      opacity: 0;
+      content: unset;
+    }
+  }
+  @keyframes blink {
+    to {
+      opacity: 0;
+      content: unset;
+    }
+  }
+</style>
+
+
+      <div class="templateux-cover" style="background-image: url({% static 'images/blackPixel.jpeg' %});">
+        <div class="container">
+        <div class="row align-items-lg-center">
+        <div class="col-lg-7 order-lg-1">
+        <h1 class="heading mb-3 text-white" >
+          We Are Your Partners in
+           <strong> Helping businesses link their daily activities to strategic results.</strong>
+        </h1>
+        <!-- <p class="lead mb-5 text-white">
+          To build operationally excellent businesses both in structure and in performance by the application of proven management principles, techniques, and technology
+        </p> -->
+        <!-- <p ><a href="#" class="btn btn-primary py-3 px-4 mr-3">Get Started</a> <a href="#" class="text-white">Learn More</a></p> -->
+        </div>
+        </div>
+        </div>
+        </div> 
+        <div class="templateux-section pt-0 pb-0">
+        <div class="container">
+        <div class="row">
+        <div class="col-md-12 templateux-overlap">
+        <div class="row">
+        <div class="col-md-4">
+        <div class="media block-icon-1 d-block text-left">
+        <div class="icon mb-3">
+          <i class="fas fa-briefcase"  style="color:#000066;"></i>
+        <!-- <img src="{% static 'images/flaticon/svg/001-consultation.svg' %}" alt="Image" class="img-fluid"> -->
+        </div>
+        <div class="media-body">
+        <h3 class="h5 mb-4">Job Profiling</h3>
+        <!-- <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p> -->
+        <!-- <p><a href="#">Learn More</a></p> -->
+        </div>
+        </div> 
+        </div>
+        <div class="col-md-4" >
+        <div class="media block-icon-1 d-block text-left">
+        <div class="icon mb-3">
+          <i class="fas fa-chart-pie" style="color:#000066;"></i>
+        </div>
+        <div class="media-body">
+        <h3 class="h5 mb-4">KPI Analytics</h3>
+        <!-- <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+        <p><a href="#">Learn More</a></p> -->
+        </div>
+        </div> 
+        </div>
+        <div class="col-md-4" >
+        <div class="media block-icon-1 d-block text-left">
+        <div class="icon mb-3">
+          <i class="fas fa-users" style="color:#000066;"></i>
+        </div>
+        <div class="media-body">
+        <h3 class="h5 mb-4">Recruitment</h3>
+        <!-- <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+        <p><a href="#">Learn More</a></p> -->
+        </div>
+        </div> 
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        <!-- <br> -->
+    
+        <div class="templateux-section bg-light phone_box_spacing" style="margin-bottom:0px;">
+          <div class="container">
+          <div class="row ">
+          <div class="col-12 text-center ">
+          <h2>Our Services</h2>
+          </div>
+                
+                {% for service in  all_service %}
+                  <div class="col-md-4 mb-4"  data-aos="fade-up" data-aos-delay="400">
+                    <div class="media block-icon-1 d-block text-center">
+                      <div class="icon mb-3">
+                        <i class="{{service.icon_class}}" style="color:#000066;"></i>
+                        <!-- <img src="{% static 'images/flaticon/svg/004-gear.svg' %}" alt="Image" class="img-fluid"> -->
+                      </div>
+                      <div class="media-body">
+                          <h3 class="h5 mb-4">{{service.title}}</h3>
+                            <p>
+                                {{service.intro_content}}
+
+                                <a href="{% url 'serviceDetail' service.id  %}">Read More</a>
+                            </p>
+                      </div>
+                    </div> 
+                </div>
+                {% endfor %}
+                  
+          </div>
+          <div class="row">
+          <div class="col-md-12 text-center" >
+          <!-- <p><a href="{% url 'our-solutions' %}" class="btn btn-black py-3 px-4">More Features</a></p> -->
+          </div>
+          </div>
+          </div>
+          </div> 
+    
+    
+     <div style="margin-bottom:-1000px;">
+       <div class="text-center ">
+         <h1>Our Training</h1>
+       </div>
+
+       <div class="marko-grid-wrapper">
+        
+        <div class="item01"><img src="{% static 'images/kpi.jpeg' %}" style="width: 100%;" alt="">
+          <div class="meta">
+            <h2 style="color: white;">KEY PERFORMANCE INDICATORS ANALYTICS</h2>
+            <!-- <ul class="cta-list">
+              <li class="cta-item">
+            <i class="material-icons">&#xE8DC;</i></li>
+              <li class="cta-item">
+            <i class="material-icons">&#xE0B9;</i></li>
+              <li class="cta-item">
+            <i class="material-icons">&#xE80D;</i></li>
+              <li class="cta-item">
+            <i class="material-icons">&#xE5D4;</i></li>
+            </ul> -->
+          </div>
+        </div>
+        <div class="item02"><img src="{% static 'images/perfomance.jpeg' %}" style="width: 100%;" alt="">
+          <div class="meta">
+            <h2 style="color: white;">PERFORMANCE AND Development</h2>
+            <!-- <ul class="cta-list">
+              <li class="cta-item">
+            <i class="material-icons">&#xE8DC;</i></li>
+              <li class="cta-item">
+            <i class="material-icons">&#xE0B9;</i></li>
+              <li class="cta-item">
+            <i class="material-icons">&#xE80D;</i></li>
+              <li class="cta-item">
+            <i class="material-icons">&#xE5D4;</i></li>
+            </ul> -->
+          </div>
+        </div>
+        <div class="item03"><img src="{% static 'images/hero_1.jpg' %}" style="width: 100%;" alt="">
+          <div class="meta">
+            <h2 style="color: white;">Learning and Growth Framework Development
+
+            </h2>
+            <!-- <ul class="cta-list">
+              <li class="cta-item">
+            <i class="material-icons">&#xE8DC;</i></li>
+              <li class="cta-item">
+            <i class="material-icons">&#xE0B9;</i></li>
+              <li class="cta-item">
+            <i class="material-icons">&#xE80D;</i></li>
+              <li class="cta-item">
+            <i class="material-icons">&#xE5D4;</i></li>
+            </ul> -->
+          </div>
+        </div>
+  
+        </div>
+     </div>     
+   
+          <div class="templateux-section" style="margin-bottom:-110px;">
+            <div class="container">
+                <div class="row">
+               
+                  <!-- <div class="row text-center mb-1"> -->
+                    <div class="col-12">
+                    <h2>Insight and Research</h2>
+                    </div>
+                  <!-- </div> -->
+
+
+{% for  i  in  all_researchInfor %}
+<div class="col-md-6 col-lg-4 mb-4">
+  <a href="{% url 'researchInsightDetail' i.id %}" class="block-thumbnail-1 one-whole show-text height-sm" style="background-image:url({{ i.cover_image.url }})" data-aos="fade" data-aos-delay="300">
+  <div class="block-thumbnail-content">
+  <h2>{{  i.heading }}</h2>
+  <span class="" style="color: white;">{{ i.intro_content }}</span>
+  </div>
+  </a>
+</div>
+
+{% endfor %}
+  
+  
+                  
+                </div> 
+            <!-- <div class="row mt-5">
+            <div class="col-md-12 pt-5">
+            <ul class="pagination custom-pagination">
+            <li class="page-item prev"><a class="page-link" href="#"><i class="icon-keyboard_arrow_left"></i></a></li>
+            <li class="page-item active"><a class="page-linkx href=" #">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item next"><a class="page-link" href="#"><i class="icon-keyboard_arrow_right"></i></a></li>
+            </ul>
+            </div>
+            </div> -->
+            </div>
+          </div> 
+
+
+
+        <div class="templateux-section phone_box_spacing" >
+        <div class="container" >
+        <div class="row">
+        <div class="col-lg-7"data-aos="fade-left" data-aos-delay="400">
+          <!-- <h2 class="mb-5">Insight and Research</h2> -->
+          <h2 class="">More on SAVVY HR</h2>
+        <div class="item">
+          <!-- <img src="{% static 'images/slider-1.jpg' %}" alt="Free template by TemplateUX.com" class="img-fluid"> -->
+          <P>
+            Savvy HR Solutions, an offshoot of SPNS Consulting with about two decades of professional practice, is a STRATEGIC human resources management firm with strength in the enhancement of human resourcesmanagementactivitiesforbusinesses.  
+          </P>
+
+          <P>
+            Generating returns on investment from the manpower base of an organization is deeplya function of strategic human resources management practice.
+          </P>
+
+          <P>
+            SavvyHR Solutions isout to assist organizations in the transformation of their humanresources management functionalities from just operations to become more strategic hereby increase man power productivity and boosting organizational growth. 
+          </P>
+          
+        </div> 
+        </div>
+        <div class="col-lg-5 pl-lg-5" data-aos="fade-right" data-aos-delay="400">
+        <h2 class="">Why Us?</h2>
+        <div class="accordion" id="accordionExample">
+        <div class="accordion-item">
+        <h2 class="mb-0 rounded mb-2">
+          <a >
+          <i class="fas fa-chevron-circle-down" href="#" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            MANPOWER OUTSOURCING
+          </i>
+        </a>
+        </h2>
+        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+        <div class="accordion-body">
+        <p>
+          Business reviews have shown that most organizations while engaging in activities toachievetheiroverallbusinessobjectives find themselves expending resources on functions that are not withintheir areas of core competence.MANPOWER OUTSOURCINGThis has continually been a challenge for organizations, hence the need to out-source these functions.   
+        </p>
+        </div>
+        </div>
+        </div>
+        <div class="accordion-item">
+        <h2 class="mb-0 rounded mb-2">
+                <a >
+                  <i class= "fas fa-chevron-circle-down" class="collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                 Value improvement
+                  </i>
+                </a>
+        </h2>
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+        <div class="accordion-body">
+          <p>
+            Improvement in the value of products and services, the satisfaction of clients and the value of shareholders.
+          </p> 
+       </div>
+        </div>
+        </div>
+        <div class="accordion-item">
+        <h2 class="mb-0 rounded mb-2">
+        <a  >
+          <i class= "fas fa-chevron-circle-down" class="collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+
+            Business Process & Performance Management
+          </i>
+        </a>
+        </h2>
+        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+        <div class="accordion-body">
+          <p>
+            Our primary functional practices are; Business Process & Performance Management
+          </p>
+        </div>
+        </div>
+        </div>
+        <div class="accordion-item">
+        <h2 class="mb-0 rounded mb-2">
+        
+          <a >
+            <i  class= "fas fa-chevron-circle-down" class="collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+
+              Improvement in effectiveness
+            </i>
+          </a>
+        </h2>
+        <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
+        <div class="accordion-body">
+            <p>
+              Improvement in effectiveness by concentrating on areas of core competencies.
+        
+            </p>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div> 
+    
+        </div> 
+      
+        <!-- <div class="templateux-section phone_box_spacing">
+          <div class="container">
+          <div class="row text-center mb-1">
+            <div class="col-12">
+            <h2>Our clientele</h2>
+            </div>
+          </div>
+          <div class="row justify-content-center">
+          <div class="col-md-8 testimonial-wrap">
+         
+          <div class="owl-carousel wide-slider-testimonial">
+          <div class="item">
+          <blockquote class="block-testomonial">
+          <p>&ldquo;Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.&rdquo;</p>
+          <p><cite>Drew Wilson, CEO and Founder of CoLab</cite></p>
+          </blockquote>
+          </div>
+          <div class="item">
+          <blockquote class="block-testomonial">
+          <p>&ldquo;When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrove, the headline of Alphabet Village and the subline of her own road, the Line Lane. Pityful a rethoric question ran over her cheek, then she continued her way.&rdquo;</p>
+          <p><cite>Craig Smith, CEO and Founder of Slite</cite></p>
+          </blockquote>
+          </div>
+          <div class="item">
+          <blockquote class="block-testomonial">
+          <p>&ldquo;A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.&rdquo;</p>
+          <p><cite>Bob Robe, CEO and Founder of Fixer</cite></p>
+          </blockquote>
+          </div>
+          </div>
+          </div>
+          </div>
+          </div> 
+          </div>  -->
+      
+        <div class="templateux-section pb-0 phone_box_spacing">
+          <div class="container">
+          <div class="row text-center mb-3  mt-1" style="padding-top:1rem;">
+          <div class="col-12">
+          <h2>Meet the team</h2>
+          </div>
+          </div>
+          <div class="row">
+          <div class="col-6 col-sm-6 col-md-6 col-lg-4">
+            <!-- style="background-image: url({% static 'images/person_1.jpg' %});" -->
+          <div class="staff" class="staff-img"
+           >
+            <a href="#" class="desc">
+            <h3>Debo Adebayo</h3>
+            <span>Chief Executive Officer</span>
+            <div class="parag">
+            <!-- <p>Even the all-powerful Pointing has no control about the blind texts</p> -->
+            </div>
+            </a>
+          </div>
+          </div>
+          <div class="col-6 col-sm-6 col-md-6 col-lg-4">
+            <!-- style="background-image: url({% static 'images/person_2.jpg' %});" -->
+            <div class="staff" class="staff-img" >
+          <a href="#" class="desc">
+          <h3>Damilola Williams</h3>
+          <span>Ag. Chief operating Officer</span>
+          <div class="parag">
+          <!-- <p>Even the all-powerful Pointing has no control about the blind texts</p> -->
+          </div>
+          </a>
+          </div>
+          </div>
+          <div class="col-6 col-sm-6 col-md-6 col-lg-4">
+            <!-- style="background-image: url({% static 'images/person_3.jpg' %});" -->
+          <div class="staff" class="staff-img" >
+          <a href="#" class="desc">
+          <h3>Ahmed Raifu</h3>
+          <span>Head,Project Management Office</span>
+          <div class="parag">
+          <!-- <p>Even the all-powerful Pointing has no control about the blind texts</p> -->
+          </div>
+          </a>
+          </div>
+          </div>
+          </div>
+          </div>
+      </div>
+        <!-- <div class="container templateux-section">
+        <div class="row">
+        <div class="col-12 col-md-7 mx-auto text-center mb-5">
+        <h2>Our Blog</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit reiciendis dolore, facilis ipsam officiis quasi?</p>
+        </div>
+        </div>
+        <div class="d-flex flex-sm-row">
+        <a href="#" class="block-thumbnail-1 one-third" style="background-image: url('images/slider-2.jpg'); " data-aos="fade">
+        <div class="block-thumbnail-content">
+        <h2>When she reached the first</h2>
+        <span class="post-meta">June 18, 2020 &bullet; by Admin</span>
+        </div>
+        </a>
+        <a href="#" class="block-thumbnail-1 two-third" style="background-image: url('images/slider-1.jpg'); " data-aos="fade" data-aos-delay="100">
+        <div class="block-thumbnail-content">
+        <h2>Duden flows by their place</h2>
+        <span class="post-meta">July 17, 2020 &bullet; by Admin</span>
+        </div>
+        </a>
+        </div>
+        <div class="d-flex flex-column flex-sm-row">
+        <a href="#" class="block-thumbnail-1 two-third" style="background-image: url('images/slider-3.jpg'); " data-aos="fade" data-aos-delay="200">
+        <div class="block-thumbnail-content">
+        <h2>Italic Mountains</h2>
+        <span class="post-meta">March 18, 2020 &bullet; by Admin</span>
+        </div>
+        </a>
+        <a href="#" class="block-thumbnail-1 one-third" style="background-image: url('images/slider-4.jpg'); " data-aos="fade" data-aos-delay="300">
+        <div class="block-thumbnail-content">
+        <h2>Behind the word mountains</h2>
+        <span class="post-meta">March 22, 2020 &bullet; by Admin</span>
+        </div>
+        </a>
+        </div>
+        </div>  -->
+    
+      </div> 
+      {% endblock mainContent %}
+

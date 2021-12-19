@@ -1,0 +1,73 @@
+{% extends './base.html' %}
+{% load static %}
+
+      {% include 'partials/nav.html' %}
+
+      
+      {% block mainContent %}
+
+
+      <div class="templateux-cover" style="background-image:url({% static 'images/blackPixel.jpeg' %})">
+        <div class="container">
+        <div class="row align-items-lg-center">
+        <div class="col-lg-6 order-lg-1 text-center mx-auto">
+        <h1 class="heading mb-3 text-white" data-aos="fade-up">Insight and Research</h1>
+        <!-- <p class="lead mb-5 text-white" data-aos="fade-up" data-aos-delay="100">
+          Our quest is to continue to add value to the businesses of our clients. Our stakeholders have seen us emerge as a pacesetter and industry leader in these major areas and this is evident in our array of works and the introduction of programs that help clients achieve successful customer outcomes. 
+        
+        </p> -->
+        <!-- <p data-aos="fade-up" data-aos-delay="200"><a href="#" class="btn btn-primary py-3 px-4 mr-3">Get Started</a> <a href="#" class="text-white">Learn More</a></p> -->
+        </div>
+        </div>
+        </div>
+        </div> 
+        <br>
+
+            
+        
+
+        
+    
+        <div class="templateux-section">
+          <div class="container">
+              <div class="row">
+             
+                <!-- <div class="row text-center mb-1"> -->
+                  <div class="col-12">
+                  <h2>Insight and Research</h2>
+                  </div>
+                <!-- </div> -->
+
+                {% for  i  in  all_researchInfor %}
+                <div class="col-md-6 col-lg-4 mb-4">
+                  <a href="{% url 'researchInsightDetail' i.id %}" class="block-thumbnail-1 one-whole show-text height-sm" style="background-image:url({{ i.cover_image.url }})" data-aos="fade" data-aos-delay="300">
+                  <div class="block-thumbnail-content">
+                  <h2>{{  i.heading }}</h2>
+                  <span class="" style="color: white;">{{ i.intro_content }}</span>
+                  </div>
+                  </a>
+                </div>
+                
+                {% endfor %}
+                  
+              </div> 
+          <!-- <div class="row mt-5">
+          <div class="col-md-12 pt-5">
+          <ul class="pagination custom-pagination">
+          <li class="page-item prev"><a class="page-link" href="#"><i class="icon-keyboard_arrow_left"></i></a></li>
+          <li class="page-item active"><a class="page-linkx href=" #">1</a></li>
+          <li class="page-item"><a class="page-link" href="#">2</a></li>
+          <li class="page-item"><a class="page-link" href="#">3</a></li>
+          <li class="page-item next"><a class="page-link" href="#"><i class="icon-keyboard_arrow_right"></i></a></li>
+          </ul>
+          </div>
+          </div> -->
+          </div>
+        </div> 
+
+        
+    
+      
+      
+      {% endblock mainContent %}
+

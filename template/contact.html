@@ -1,0 +1,100 @@
+{% extends './base.html' %}
+{% load static %}
+
+
+
+
+
+      {% include 'partials/nav.html' %}
+
+      
+      {% block mainContent %}
+
+
+      <div class="templateux-cover" style="background-image:url({% static 'images/contact.jpg' %})">
+        <div class="container">
+        <div class="row align-items-lg-center">
+        <div class="col-lg-6 order-lg-1 text-center mx-auto">
+        <h1 class="heading mb-3 text-white" data-aos="fade-up">Contact us</h1>
+        <!-- <p class="lead mb-5 text-white" >Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p> -->
+        <!-- <p data-aos="fade-up" data-aos-delay="200">
+            <a href="#" class="btn btn-primary py-3 px-4 mr-3">Get Started</a> 
+            <a href="#" class="text-white">Learn More</a>
+        </p> -->
+        </div>
+        </div>
+        </div>
+        </div> 
+        <div class="templateux-section">
+        <div class="container">
+        <div class="row mb-5">
+        <div class="col-md-7 pr-md-7 mb-5">
+        <form action="{% url 'contact-us' %}" method="post">
+          {% csrf_token %}
+        <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" class="form-control" id="email" name="email" required>
+        </div>
+
+        <div class="form-group">
+          <!-- <label for="exampleFormControlSelect1">Example select</label> -->
+          <select class="form-control" id="exampleFormControlSelect1" name="messageType">
+            <option  value="Inquiry">Inquiry</option>
+            <option selected value="Book a demo">Book a demo</option>
+           
+          </select>
+        </div>
+        <div class="form-group">
+        <label for="message">Message</label>
+        <textarea name="message" id="message" value='.  ' cols="30" rows="10" class="form-control"></textarea>
+        </div>
+
+        <div class="form-group">
+        <input type="submit" class="btn btn-primary py-3 px-5" value="Send Message">
+        </div>
+        </form>
+        </div>
+        <div class="col-md-5">
+        <div class="media block-icon-1 d-block text-center">
+        <div class="icon mb-3">
+          <!-- <span class="ion-ios-location-outline"></span> -->
+          <i class="fas fa-house-user"
+          style="color: brown;"
+          
+          ></i>
+        
+        </div>
+        <div class="media-body">
+        <h3 class="h5 mb-4">No5, Adeboye Solanke Avenue,off Allen Avenue,Ikeja,Lagos.</h3>
+        </div>
+        </div> 
+        <div class="media block-icon-1 d-block text-center">
+        <div class="icon mb-3">
+          <!-- <span class="ion-ios-telephone-outline"></span> -->
+          <i class="fas fa-phone-volume" style="color: brown;"></i>
+        </div>
+        <div class="media-body">
+        <h3 class="h5 mb-4">08023448228</h3>
+        </div>
+        </div> 
+        <div class="media block-icon-1 d-block text-center">
+        <div class="icon mb-3">
+          <!-- <span class="ion-ios-email-outline"></span> -->
+          <i class="fas fa-envelope-open" style="color: brown;"></i>
+        </div>
+        <div class="media-body">
+        <h3 class="h5 mb-4"><a href="" class="__cf_email__" >
+                info@spnsng.com
+        </a></h3>
+        </div>
+        </div> 
+        </div>
+        </div> 
+        </div>
+        </div>
+      {% endblock mainContent %}
+
